@@ -4,7 +4,7 @@
 Here is a set of Java demo code for basic study.
 
 ### base
-TODO
+Basic Java language
 
 ### thread
 Multi-threading
