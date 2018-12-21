@@ -1,4 +1,5 @@
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 public class Main {
@@ -24,6 +25,13 @@ public class Main {
             Object result2 = method2.invoke(object);
 
             print(result1, result2);
+
+            Field field = klass.getDeclaredField("age");
+            field.setAccessible(true);
+            field.setInt(object, 16);
+
+            print(method2.invoke(object));
+
         } catch (Exception e) {
             e.printStackTrace(System.err);
         }
