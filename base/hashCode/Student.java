@@ -17,9 +17,9 @@ public class Student {
 
         Student student = (Student) o;
 
-        return (this.name != null && this.name.equals(student.name))
-                && student.age == this.age
-                && (this.gender != null && this.gender.equals(student.gender));
+        return (this.name == student.name || (this.name != null && this.name.equals(student.name)))
+                && this.age == student.age
+                && this.gender == student.gender;
     }
 
     @Override
