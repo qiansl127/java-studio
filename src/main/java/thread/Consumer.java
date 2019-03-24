@@ -1,3 +1,5 @@
+package thread;
+
 import java.util.Queue;
 
 public class Consumer extends Thread {
@@ -5,7 +7,7 @@ public class Consumer extends Thread {
     private final Queue<Integer> queue;
     private final String name;
 
-    Consumer(Queue<Integer> queue, String name) {
+    public Consumer(Queue<Integer> queue, String name) {
         this.queue = queue;
         this.name = name;
     }

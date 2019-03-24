@@ -1,13 +1,18 @@
+package player.thread;
+
+import player.Player;
+import thread.Consumer;
+import thread.Producer;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Main {
-
+public class ProducerAndConsumer extends Player {
     private static final int CAPACITY = 5;
 
-    public static void main(String[] args) {
+    public void play() {
 
         final Queue<Integer> queue = new LinkedList<>();
         Producer p1 = new Producer(queue, CAPACITY, "1");

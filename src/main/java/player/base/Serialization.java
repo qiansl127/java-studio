@@ -1,15 +1,25 @@
-import java.io.*;
+package player.base;
+
+import player.Player;
+import entity.Period;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Date;
 
-public class Main {
-    public static void main(String[] args) {
-        final byte[] serializedForm = serialize(new Period(new Date(), new Date()));
-        Period p = (Period) deserialize(serializedForm);
+public class Serialization extends Player {
+    @Override
+    public void play() {
+        final byte[] serializedForm = this.serialize(new Period(new Date(), new Date()));
+        Period p = (Period) this.deserialize(serializedForm);
 
         System.out.println(p);
     }
 
-    private static byte[] serialize(Period period) {
+    private byte[] serialize(Period period) {
         try {
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
             ObjectOutputStream out = new ObjectOutputStream(bos);
@@ -22,7 +32,7 @@ public class Main {
         }
     }
 
-    private static Object deserialize(byte[] sf) {
+    private Object deserialize(byte[] sf) {
         try {
             return new ObjectInputStream(
                     new ByteArrayInputStream(sf)

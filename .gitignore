@@ -1,1 +1,11 @@
+.gradle/
+.idea/
+
 *.class
+*.jar
+*.war
+
+out/
+build/
+
+!gradle-wrapper.jar

@@ -1,3 +1,5 @@
+package thread;
+
 import java.util.Queue;
 
 public class Producer extends Thread {
@@ -5,7 +7,7 @@ public class Producer extends Thread {
     final private int capacity;
     final private String name;
 
-    Producer(Queue<Integer> queue, int capacity, String name) {
+    public Producer(Queue<Integer> queue, int capacity, String name) {
         this.queue = queue;
         this.capacity = capacity;
         this.name = name;

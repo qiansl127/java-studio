@@ -1,13 +1,26 @@
-public class Student {
+package entity;
 
+public class Student {
     private String name;
     private int age;
     private Gender gender;
 
-    Student(String name, int age, Gender gender) {
+    public Student(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+    public Student(String name, int age, Gender gender) {
+        this(name, age);
         this.gender = gender;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
     }
 
     @Override
@@ -17,7 +30,7 @@ public class Student {
 
         Student student = (Student) o;
 
-        return (this.name == student.name || (this.name != null && this.name.equals(student.name)))
+        return (this.name == null) ? student.name == null : this.name.equals(student.name)
                 && this.age == student.age
                 && this.gender == student.gender;
     }

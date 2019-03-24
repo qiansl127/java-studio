@@ -1,3 +1,5 @@
+package entity;
+
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
@@ -13,7 +15,7 @@ public final class Period implements Serializable {
      * @throws IllegalArgumentException if start is after end
      * @throws NullPointerException if start or end is null
      */
-    Period(Date start, Date end) {
+    public Period(Date start, Date end) {
         this.start = new Date(start.getTime());
         this.end = new Date(end.getTime());
 
