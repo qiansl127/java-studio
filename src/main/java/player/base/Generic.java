@@ -69,7 +69,11 @@ public class Generic extends Player {
         list1.add(42);
 
         List<Object> list2 = new ArrayList<>();
-        this.<Number>move(list1, list2);
+
+        // Concrete < Integer < Number < Object < Abstract
+        // this.<Number>move(list1, list2);
+        // assigning Number to E is not necessary, just compile time check
+        this.move(list1, list2);
 
         Printer.print(list2);
     }
@@ -80,17 +84,18 @@ public class Generic extends Player {
 
         // comparables and comparators are always consumers, user Comparable/Comparator<? super T>
     }
-}
 
-class MyList<E extends Student> extends ArrayList<E> {
-    @Override
-    public int size() {
-        return -1;
+    public static class MyList<E extends Student> extends ArrayList<E> {
+        @Override
+        public int size() {
+            return -1;
+        }
     }
-}
 
-class SuperStudent extends Student {
-    SuperStudent() {
-        super("super", 100, Gender.UNKNOWN);
+    public static class SuperStudent extends Student {
+        SuperStudent() {
+            super("super", 100, Gender.UNKNOWN);
+        }
     }
+
 }

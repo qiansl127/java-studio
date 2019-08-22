@@ -10,14 +10,15 @@ public class Runner {
             "player.base.StreamPlayer",          // 3
             "player.base.ValidityCheck",         // 4
             "player.base.Generic",               // 5
-            "player.thread.ProducerAndConsumer"  // 6
+            "player.base.AnnotationPlayer",      // 6
+            "player.thread.ProducerAndConsumer"  // 7
     };
 
     public static void main(String[] args) {
         try {
             // check the type manually
             @SuppressWarnings("unchecked")
-            Class<Player> klass = (Class<Player>) Class.forName(classNames[3]);
+            Class<Player> klass = (Class<Player>) Class.forName(classNames[5]);
 
             Constructor<Player> constructor = klass.getConstructor();
             Player player = constructor.newInstance();
