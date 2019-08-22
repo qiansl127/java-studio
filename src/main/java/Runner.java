@@ -19,9 +19,11 @@ public class Runner {
 
     public static void main(String[] args) {
         try {
+            Integer i = (args.length > 0) ? Integer.valueOf(args[0]) : 10;
+
             // check the type manually
             @SuppressWarnings("unchecked")
-            Class<Player> klass = (Class<Player>) Class.forName(classNames[10]);
+            Class<Player> klass = (Class<Player>) Class.forName(classNames[i]);
 
             Constructor<Player> constructor = klass.getConstructor();
             Player player = constructor.newInstance();
