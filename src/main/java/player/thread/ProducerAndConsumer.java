@@ -9,7 +9,7 @@ import java.util.Queue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class ProducerAndConsumer extends Player {
+public class ProducerAndConsumer implements Player {
     private static final int CAPACITY = 5;
 
     public void play() {

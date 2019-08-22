@@ -6,10 +6,10 @@ import util.Printer;
 
 import java.util.Objects;
 
-public class ValidityCheck extends Player {
+public class ValidityCheck implements Player {
     @Override
     public void play() {
-        test(new Student("frank", -8));
+        this.test(new Student("frank", -8));
     }
 
     private void test(Student student) {

@@ -10,7 +10,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Date;
 
-public class Serialization extends Player {
+public class Serialization implements Player {
     @Override
     public void play() {
         final byte[] serializedForm = this.serialize(new Period(new Date(), new Date()));

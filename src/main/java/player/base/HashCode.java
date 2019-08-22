@@ -5,7 +5,7 @@ import entity.Student;
 import player.Player;
 import util.Printer;
 
-public class HashCode extends Player {
+public class HashCode implements Player {
     @Override
     public void play() {
         testHashCode();

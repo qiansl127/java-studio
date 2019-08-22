@@ -7,7 +7,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-public class Reflection extends Player {
+public class Reflection implements Player {
     @Override
     public void play() {
         try {

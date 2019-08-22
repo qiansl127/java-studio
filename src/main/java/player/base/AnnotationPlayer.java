@@ -5,7 +5,7 @@ import player.Player;
 import util.Printer;
 
 @Description("Hello Annotation")
-public class AnnotationPlayer extends Player {
+public class AnnotationPlayer implements Player {
 
     @Override
     public void play() {

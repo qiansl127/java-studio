@@ -16,7 +16,7 @@ import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class StreamPlayer extends Player {
+public class StreamPlayer implements Player {
     List<Student> studentList =
             Arrays.asList(new Student("frank", 17),
                           new Student("jason", 18),

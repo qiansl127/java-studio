@@ -8,7 +8,8 @@ import util.Printer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Generic extends Player {
+public class Generic implements Player {
+
     @Override
     public void play() {
         testParameterizedType();
