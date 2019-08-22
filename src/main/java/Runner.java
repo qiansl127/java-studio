@@ -12,14 +12,16 @@ public class Runner {
             "player.base.Generic",               // 5
             "player.base.AnnotationPlayer",      // 6
             "player.thread.ProducerAndConsumer", // 7
-            "player.thread.ParallelStream"       // 8
+            "player.thread.ParallelStream",      // 8
+            "player.pattern.Composite",          // 9
+            "player.pattern.Visitor"             // 10
     };
 
     public static void main(String[] args) {
         try {
             // check the type manually
             @SuppressWarnings("unchecked")
-            Class<Player> klass = (Class<Player>) Class.forName(classNames[8]);
+            Class<Player> klass = (Class<Player>) Class.forName(classNames[10]);
 
             Constructor<Player> constructor = klass.getConstructor();
             Player player = constructor.newInstance();
