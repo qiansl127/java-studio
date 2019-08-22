@@ -17,7 +17,7 @@ public class Runner {
         try {
             // check the type manually
             @SuppressWarnings("unchecked")
-            Class<Player> klass = (Class<Player>) Class.forName(classNames[5]);
+            Class<Player> klass = (Class<Player>) Class.forName(classNames[3]);
 
             Constructor<Player> constructor = klass.getConstructor();
             Player player = constructor.newInstance();

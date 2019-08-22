@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -16,6 +17,13 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamPlayer extends Player {
+    List<Student> studentList =
+            Arrays.asList(new Student("frank", 17),
+                          new Student("jason", 18),
+                          new Student("donut", 19),
+                          new Student("frank", 15),
+                          new Student("frank", 16));
+
     @Override
     public void play() {
         testMap();
@@ -73,22 +81,15 @@ public class StreamPlayer extends Player {
         Printer.print(myList);
     }
 
-    private  void testToMap() {
+    private void testToMap() {
         Printer.print("Test Collector - toMap");
 
-        List<Student> myList = Arrays.asList(
-                new Student("frank", 17),
-                new Student("jason", 18),
-                new Student("donut", 19),
-                new Student("frank", 15),
-                new Student("frank", 16));
-
         Map<String, Student> result1 =
-                myList.stream().collect(
+                studentList.stream().collect(
                         Collectors.toMap(Student::getName, student -> student, (v1, v2) -> v1));
 
         Map<String, Student> result2 =
-                myList.stream().collect(
+                studentList.stream().collect(
                         Collectors.toMap(Student::getName, student -> student,
                                          BinaryOperator.minBy(Comparator.comparing(Student::getAge))));
 
@@ -96,7 +97,7 @@ public class StreamPlayer extends Player {
         Printer.print(result2);
     }
 
-    private  void testGroupingBy() {
+    private void testGroupingBy() {
         Printer.print("Test Collector - groupingBy");
 
         List<String> myList = Arrays.asList("flower", "water", "river", "water");
@@ -115,5 +116,12 @@ public class StreamPlayer extends Player {
                                                               Collectors.toCollection(TreeSet::new)));
 
         Printer.print(result1, result2, result3);
+
+        Map<String, Optional<Student>> oldStudents =
+                studentList.stream().collect(
+                        Collectors.groupingBy(Student::getName,
+                                              Collectors.maxBy(Comparator.comparing(Student::getAge))));
+
+        Printer.print(oldStudents);
     }
 }
