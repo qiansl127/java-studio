@@ -18,6 +18,7 @@ public class PlayGround {
             "com.frank.java.studio.base.AnnotationPlayer",
             "com.frank.java.studio.thread.ProducerAndConsumer",
             "com.frank.java.studio.thread.ParallelStream",
+            "com.frank.java.studio.thread.AbcPlayer",
             "com.frank.java.studio.pattern.Composite",
             "com.frank.java.studio.pattern.VisitorPlayer"
     };
