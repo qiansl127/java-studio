@@ -1,16 +1,24 @@
 # java-studio
 
-Here is a set of Java demo code for basic study.
+## Structure
 
-## Category
-### base
+### [base](https://github.com/qiansl127/java-studio/tree/master/src/main/java/com/frank/java/studio/base)
 Basic Java language
 
-### pattern
+### [pattern](https://github.com/qiansl127/java-studio/tree/master/src/main/java/com/frank/java/studio/pattern)
 Design Pattern
 
-### thread
+### [thread](https://github.com/qiansl127/java-studio/tree/master/src/main/java/com/frank/java/studio/thread)
 Multi-threading
 
 ## Usage
-java -jar java-studio-1.0-SNAPSHOT.jar 5
+
+### Option 1
+Call main method in class `com.frank.java.studio.PlayGround` in your IDE.
+
+### Option 2
+Use the Gradle plugin in your IntelliJ, and choose the jar step.
+
+```bash
+java -jar ./build/libs/java-studio-1.0-SNAPSHOT.jar
+```
